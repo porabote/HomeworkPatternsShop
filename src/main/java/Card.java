@@ -1,14 +1,21 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Card {
 
-    private ArrayList<Product> cardList;
+    private HashMap<Integer, CardProduct> cardList = new HashMap<>();
 
-    protected void put(Product product) {
-        cardList.add(product);
+    protected void put(Product product, int count){
+        cardList.put(product.getId(), new CardProduct(
+                product.getId(),
+                product.getName(),
+                product.getPrice(),
+                product.getCategoryId(),
+                count
+        ));
     }
 
-    public ArrayList getCardList() {
+    public HashMap getCardList() {
         return this.cardList;
     }
 

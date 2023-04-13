@@ -1,13 +1,14 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Order {
 
     private User user;
     private String address;
-    private ArrayList<Product> products;
+    private HashMap<Integer, Product> products;
     public Double sumTotal;
 
-    public Order(User user, ArrayList<Product> products) {
+    public Order(User user, HashMap<Integer, Product> products) {
         this.user = user;
         this.products = products;
     }

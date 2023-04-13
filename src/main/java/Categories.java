@@ -6,7 +6,7 @@ public class Categories {
 
     public Categories() {
         this.list.add(new Category(1, "Продукты"));
-        this.list.add(new Category(2, "Товары для сада"));
+        this.list.add(new Category(2, "Товары для дома"));
     }
 
     public ArrayList getList() {
