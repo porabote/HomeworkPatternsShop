@@ -10,6 +10,9 @@ public class DeliveryService implements IDeliveryService {
     private HashMap<Integer, CardProduct> products;
     private User user;
     private String address;
+    private int countKilometers;
+
+    private int maxKilometers = 50;
 
     @Override
     public void setProducts(HashMap<Integer, CardProduct> products) {
@@ -23,5 +26,13 @@ public class DeliveryService implements IDeliveryService {
 
     public void setOrderAddress(String address) {
         this.address = address;
+    }
+
+    public void setCountKilometers(int countKm) {
+        if (countKm > maxKilometers) {
+            System.out.println("Too far");
+        } else {
+            this.countKilometers = countKm;
+        }
     }
 }
