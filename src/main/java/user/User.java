@@ -1,8 +1,11 @@
 package user;
 
+import components.auth.Auth;
+import components.auth.IAuthUser;
+
 import java.util.Scanner;
 
-public class User implements IUser {
+public class User implements IUser, IAuthUser {
 
     private String name;
     private String email;
@@ -14,6 +17,11 @@ public class User implements IUser {
 
     @Override
     public String getName() {
+        return this.name;
+    }
+
+    @Override
+    public String getLogin() {
         return this.name;
     }
 
@@ -31,7 +39,11 @@ public class User implements IUser {
         System.out.println("and Email ");
         String email = scan.nextLine();
 
-        return new User(name, email);
+        User user = new User(name, email);
+
+        Auth.auth(user);
+
+        return user;
     }
 
 }
