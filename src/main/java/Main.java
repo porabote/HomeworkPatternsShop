@@ -18,7 +18,6 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        //SOLID: Single Responsibility
         User user = User.auth();
 
         getProducts();

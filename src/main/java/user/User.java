@@ -41,6 +41,7 @@ public class User implements IUser, IAuthUser {
 
         User user = new User(name, email);
 
+        //SOLID: Single Responsibility
         Auth.auth(user);
 
         return user;
