@@ -24,18 +24,22 @@ public class Order {
         this.address = address;
     }
 
-//    public void accept() throws Exception {
-//
-//        try {
-//            Letter letter = new LetterBuilder()
-//                    .setEmail(this.user.getEmail())
-//                    .setMsg("Вы успешно оформили заказ")
-//                    .create();
-//            Mail.send(letter);
-//        } catch (Exception e) {
-//            System.out.println(e.getMessage());
-//        }
-//    }
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public void accept() throws Exception {
+
+        try {
+            Letter letter = new LetterBuilder()
+                    .setEmail(this.user.getEmail())
+                    .setMsg("Вы успешно оформили заказ")
+                    .create();
+            Mail.send(letter);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
     public void setTotal() {
 

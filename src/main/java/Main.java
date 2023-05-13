@@ -12,19 +12,6 @@ import java.util.Scanner;
 
 public class Main {
 
-
-    //    1 (S)  https://github.com/porabote/HomeworkPatternsShop/blob/main/src/main/java/user/User.java
-//  (Auth.auth(user); аутентификацией занимается отдельный компонент)
-//
-// 2 (O) https://github.com/porabote/HomeworkPatternsShop/blob/main/src/main/java/components/auth/Auth.java (может приходить любой пользователь реализующий соотв интерфейс)
-//
-// 3 (L) https://github.com/porabote/HomeworkPatternsShop/blob/main/src/main/java/delivery/DeliveryServiceCourier.java - доставка курьером является частным случаем доставки
-//
-// 4 (I) https://github.com/porabote/HomeworkPatternsShop/tree/main/src/main/java/delivery - разделение интерфейсов на доставку и самовывоз (без обязательного указания адреса доставки)
-//
-//  5 (D) вот здесь вопрос, судя по лекции,  это  же можно подвести под тоже что и описано в пункте 2 (O), по примерам указанным в видео непонятно чем принцип открытости-закрытости отличается он этого принципа
-
-
     static Scanner scan = new Scanner(System.in);
     static boolean isProductsSelected = false;
     static HashMap<Integer, Product> products;
@@ -75,6 +62,7 @@ public class Main {
     static private void createOrder(User user, HashMap<Integer, Product> products) throws Exception {
 
         Order order = new Order(user, products);
+        order.setUser(user);
         order.setTotal();
 
         System.out.println("Please, choose delivery type: \"curier\" or \"pickup\"");
@@ -100,7 +88,7 @@ public class Main {
 
         }
 
-        //order.accept();
+        order.accept();
 
     }
 
