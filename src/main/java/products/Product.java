@@ -1,3 +1,5 @@
+package products;
+
 public class Product {
 
     protected int id;

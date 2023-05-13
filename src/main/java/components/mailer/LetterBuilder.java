@@ -1,3 +1,5 @@
+package components.mailer;
+
 public class LetterBuilder {
 
     private String email;

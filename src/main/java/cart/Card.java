@@ -1,11 +1,14 @@
-import java.util.ArrayList;
+package cart;
+
+import products.Product;
+
 import java.util.HashMap;
 
 public class Card {
 
     private HashMap<Integer, CardProduct> cardList = new HashMap<>();
 
-    protected void put(Product product, int count){
+    public void put(Product product, int count){
         cardList.put(product.getId(), new CardProduct(
                 product.getId(),
                 product.getName(),

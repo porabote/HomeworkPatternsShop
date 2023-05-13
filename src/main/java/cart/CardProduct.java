@@ -1,4 +1,8 @@
-public class CardProduct extends Product{
+package cart;
+
+import products.Product;
+
+public class CardProduct extends Product {
 
     protected int id;
     protected String name;
